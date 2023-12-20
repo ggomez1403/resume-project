@@ -14,7 +14,9 @@
     <div class="resume-container">
         <aside class="personal-info-container">
             <header class="main-info-container">
-                <img src="./assets/profile.jpeg" alt="profile pic">
+                <div class="img-container">
+                    <img src="./assets/profile.jpeg" alt="profile pic">
+                </div>
                 <div class="main-info">
                     <h1>Geraldine Gomez</h1>
                     <p>Software Engineer</p>
@@ -134,21 +136,23 @@
                                 <i class="fa-solid fa-palette"></i>
                             </div>
                         </div>
-                        <div class="single-skill">
-                            <i class="fa-brands fa-html5"></i>
-                            <p>HTML</p>
-                        </div>
-                        <div class="single-skill">
-                            <i class="fa-brands fa-css3-alt"></i>
-                            <p>CSS</p>
-                        </div>
-                        <div class="single-skill">
-                            <i class="fa-brands fa-js"></i>
-                            <p>JavaScript</p>
-                        </div>
-                        <div class="single-skill">
-                            <i class="fa-brands fa-react"></i>
-                            <p>React JS</p>
+                        <div class="skills">
+                            <div class="single-skill">
+                                <i class="fa-brands fa-html5"></i>
+                                <p>HTML</p>
+                            </div>
+                            <div class="single-skill">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <p>CSS</p>
+                            </div>
+                            <div class="single-skill">
+                                <i class="fa-brands fa-js"></i>
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="single-skill">
+                                <i class="fa-brands fa-react"></i>
+                                <p>React JS</p>
+                            </div>
                         </div>
                     </div>
                     <div class="skills-group skills-backend">
@@ -158,17 +162,19 @@
                                 <i class="fa-solid fa-code"></i>
                             </div>
                         </div>
-                        <div class="single-skill">
-                            <i class="fa-brands fa-python"></i>
-                            <p>Python</p>
-                        </div>
-                        <div class="single-skill">
-                            <i class="fa-brands fa-java"></i>
-                            <p>Java</p>
-                        </div>
-                        <div class="single-skill">
-                            <i class="fa-solid fa-leaf"></i>
-                            <p>Spring Boot</p>
+                        <div class="skills">
+                            <div class="single-skill">
+                                <i class="fa-brands fa-python"></i>
+                                <p>Python</p>
+                            </div>
+                            <div class="single-skill">
+                                <i class="fa-brands fa-java"></i>
+                                <p>Java</p>
+                            </div>
+                            <div class="single-skill">
+                                <i class="fa-solid fa-leaf"></i>
+                                <p>Spring Boot</p>
+                            </div>
                         </div>
                     </div>
                     <div class="skills-group skills-others">
@@ -178,13 +184,15 @@
                                 <i class="fa-solid fa-server"></i>
                             </div>
                         </div>
-                        <div class="single-skill">
-                            <i class="fa-solid fa-database"></i>
-                            <p>SQL</p>
-                        </div>
-                        <div class="single-skill">
-                            <i class="fa-brands fa-git-alt"></i>
-                            <p>Git</p>
+                        <div class="skills">
+                            <div class="single-skill">
+                                <i class="fa-solid fa-database"></i>
+                                <p>SQL</p>
+                            </div>
+                            <div class="single-skill">
+                                <i class="fa-brands fa-git-alt"></i>
+                                <p>Git</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -331,16 +339,18 @@
                     <i class="fa-solid fa-circle-dot"></i>
                     <h2 class="main-title">Contact Form</h2>
                 </div>
-                <div class="contact-form">
-                    <p>Contact Me</p>
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <input type="text" placeholder="Name" class="form-control" name="name" />
-                            <input type="email" placeholder="Email" class="form-control" name="email" />
-                            <textarea name="message" placeholder="Message" class="form-control" rows="6"></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn btn">Submit Here</button>
-                    </form>
+                <div class="form-container">
+                    <div class="contact-form">
+                        <p>Contact Me</p>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <input type="text" placeholder="Name" class="form-control" name="name" />
+                                <input type="email" placeholder="Email" class="form-control" name="email" />
+                                <textarea name="message" placeholder="Message" class="form-control" rows="6"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn btn">Submit Here</button>
+                        </form>
+                    </div>
                 </div>
             </section>
         </main>

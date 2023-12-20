@@ -15,8 +15,10 @@
     --green-light: #85fa7d;
     --green-dark: #205c1c;
     --gradient-primary: linear-gradient(to right, #A478E8, #516CF7);
+    --gradient-secondary: linear-gradient(to left, #c37aff, #006aff);
     --font-family: 'Outfit', sans-serif;
     --border-radius: 10px;
+    --transition: all 0.3s linear;
 }
 
 * {
@@ -41,6 +43,7 @@ li {
 
 .resume-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 0 auto;
 }
@@ -58,12 +61,26 @@ li {
     text-align: center;
 }
 
-.main-info-container img {
+.img-container img {
     width: 70px;
     height: 70px;
     object-fit: cover;
     border-radius: 50%;
     margin: 0 auto;
+}
+
+.img-container {
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    background: var(--gradient-primary);
+}
+
+.img-container:hover {
+    background: var(--gradient-secondary);
 }
 
 .main-info {
@@ -74,6 +91,11 @@ li {
 
 .main-info h1 {
     font-size: 1.7rem;
+    transition: var(--transition);
+}
+
+.main-info h1:hover {
+    color: var(--pink-light);
 }
 
 .main-info p {
@@ -83,6 +105,12 @@ li {
     -webkit-background-clip: text;
     background-clip: text;
     display: inline-block;
+}
+
+.main-info p:hover {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .divider-line {
@@ -120,11 +148,25 @@ li {
     align-items: center;
     border-radius: 50%;
     background-color: var(--gray-darker);
+    transition: var(--transition);
+}
+
+.contact-info:hover .icon-container {
+    background-color: var(--blue-dark);
+}
+
+.contact-info:hover .fa-solid {
+    color: var(--blue-light);
+}
+
+.contact-info:hover .fa-regular {
+    color: var(--blue-light);
 }
 
 .fa-solid,
 .fa-regular {
     font-size: 0.95rem;
+    transition: var(--transition);
 }
 
 .socials-container {
@@ -148,12 +190,26 @@ li {
     flex-direction: column;
 }
 
+.social-info:hover .icon-container {
+    background-color: var(--purple-light);
+}
+
+.social-info:hover .fa-github {
+    color: var(--pink-light);
+}
+
+.social-info:hover .fa-linkedin-in {
+    color: var(--pink-light);
+}
+
 .fa-github {
     font-size: 1.2rem;
+    transition: var(--transition);
 }
 
 .fa-linkedin-in {
     font-size: 1.1rem;
+    transition: var(--transition);
 }
 
 .languages-container {
@@ -165,6 +221,15 @@ li {
 .language-info {
     display: flex;
     gap: 1rem;
+    transition: var(--transition);
+}
+
+.language-info:hover .icon-container {
+    background-color: var(--green-dark);
+}
+
+.language-info:hover .fa-solid {
+    color: var(--green-light);
 }
 
 .main {
@@ -197,17 +262,29 @@ li {
 
 .experience {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.8rem;
     padding: 1.5rem;
-    margin: 0 5.5rem;
+    margin: 0 1rem;
     background-color: var(--pink-dark);
     border-radius: var(--border-radius);
     align-items: center;
+    min-width: 350px;
+    transition: var(--transition);
+}
+
+.experience:hover {
+    background-color: var(--purple-light);
+    transform: scale(1.01);
+}
+
+.experience:hover .exp-present {
+    background-color: var(--pink-dark);
 }
 
 .experience img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 25%;
 }
 
@@ -220,16 +297,17 @@ li {
 .experience-main-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 0.3rem;
 }
 
 .exp-title {
     color: var(--gray-light);
-    font-size: 1rem;
+    font-size: 0.78rem;
 }
 
 .exp-company {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .experience-secondary-info {
@@ -244,13 +322,17 @@ li {
     padding: 0.2rem 0.4rem;
     border-radius: 6px;
     background-color: var(--purple-light);
+    font-size: 0.8rem;
+    transition: var(--transition);
 }
 
 .exp-location {
     display: flex;
     gap: 0.8rem;
     align-items: center;
+    text-align: right;
     color: var(--gray-light);
+    font-size: 0.8rem;
 }
 
 .skills-section {
@@ -260,27 +342,33 @@ li {
 .skills-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin: 2rem 5.7rem;
+    gap: 1rem;
+    margin: 1.5rem 3rem;
 }
 
 .skills-group {
     display: grid;
-    grid-template-columns: 130px repeat(4, 1fr);
-    gap: 2rem;
+    gap: 3.5rem;
     align-items: center;
+    margin: 1.8rem 0;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .skill-title {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
     gap: 1.2rem;
     align-items: center;
     justify-content: center;
 }
 
 .skill-title p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .skill-icon {
@@ -324,6 +412,42 @@ li {
     background-color: var(--gray-darker);
     border-radius: var(--border-radius);
     padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.skills-frontend .single-skill:hover {
+    background-color: var(--purple-light);
+    transform: scale(1.02);
+}
+
+.skills-frontend .single-skill:hover .fa-brands {
+    color: var(--pink-light);
+}
+
+.skills-backend .single-skill:hover {
+    background-color: var(--blue-dark);
+    transform: scale(1.02);
+}
+
+.skills-backend .single-skill:hover .fa-brands {
+    color: var(--blue-light);
+}
+
+.skills-backend .single-skill:hover .fa-leaf {
+    color: var(--blue-light);
+}
+
+.skills-others .single-skill:hover {
+    background-color: var(--green-dark);
+    transform: scale(1.02);
+}
+
+.skills-others .single-skill:hover .fa-database {
+    color: var(--green-light);
+}
+
+.skills-others .single-skill:hover .fa-git-alt {
+    color: var(--green-light);
 }
 
 .single-skill .fa-brands,
@@ -331,6 +455,7 @@ li {
 .fa-git-alt,
 .fa-leaf {
     font-size: 2.5rem;
+    transition: var(--transition);
 }
 
 .education-section {
@@ -339,10 +464,8 @@ li {
 
 .education-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-    margin: 2rem;
-    padding: 0 6rem;
+    margin: 2rem 3rem;
     justify-content: center;
 }
 
@@ -354,6 +477,12 @@ li {
     justify-content: center;
     gap: 1rem;
     padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.single-education:hover {
+    background-color: var(--pink-dark);
+    transform: scale(1.02);
 }
 
 .single-education img {
@@ -387,11 +516,10 @@ li {
 
 .projects-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    margin: 2rem 5rem;
-    padding: 0 4rem;
-
+    margin: 2rem 3rem;
 }
 
 .single-project {
@@ -402,6 +530,12 @@ li {
     background-color: var(--gray-darker);
     border-radius: var(--border-radius);
     padding: 1.2rem 0.5rem;
+    transition: var(--transition);
+}
+
+.single-project:hover {
+    background-color: var(--pink-dark);
+    transform: scale(1.02);
 }
 
 .project-info {
@@ -432,6 +566,9 @@ li {
     border-radius: 6px;
     font-size: 0.7rem;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .tag-hotel {
@@ -519,41 +656,12 @@ li {
     gap: 0.5rem;
 }
 
-footer {
-    background: var(--pink-dark);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-.footer-icons-container {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-icon {
-    width: 35px;
-    height: 35px;
-    background-color: var(--purple-light);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-icon a {
-    color: var(--gray-lighter);
-}
-
-.footer-icon .fa-brands {
-    font-size: 1.7rem;
-}
-
 .contact-section {
     padding: 0.8rem 0.5rem;
+}
+
+.form-container {
+    margin: 0 2rem;
 }
 
 .contact-form {
@@ -599,4 +707,142 @@ footer {
     cursor: pointer;
     font-family: var(--font-family);
     font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background-color: var(--pink-dark);
+}
+
+footer {
+    background: var(--pink-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.footer-icons-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-icon {
+    width: 35px;
+    height: 35px;
+    background-color: var(--purple-light);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.footer-icon:hover {
+    background-color: var(--pink-medium);
+}
+
+.footer-icon a {
+    color: var(--gray-lighter);
+}
+
+.footer-icon .fa-brands {
+    font-size: 1.7rem;
+}
+
+@media screen and (min-width: 800px) {
+    .experience {
+        gap: 1rem;
+        margin: 0 2.5rem;
+    }
+
+    .experience img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .exp-title {
+        font-size: 1rem;
+    }
+
+    .exp-company {
+        font-size: 1.2rem;
+    }
+
+    .exp-present {
+        font-size: 1rem;
+    }
+
+    .exp-location {
+        font-size: 1rem;
+    }
+
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .resume-container {
+        flex-direction: row;
+    }
+
+    .education-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .skills-group {
+        grid-template-columns: 150px 1fr;
+    }
+
+    .education-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .experience {
+        margin: 0 5rem;
+    }
+
+    .skills-container {
+        margin: 0 5rem;
+    }
+
+    .education-container {
+        margin: 3rem 6rem;
+    }
+
+    .projects-container {
+        margin: 3rem 6rem;
+    }
+
+    .skills {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

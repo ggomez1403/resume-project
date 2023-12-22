@@ -468,22 +468,27 @@ li {
     transition: var(--transition);
 }
 
-.add-skill-btn {
+.btn {
     cursor: pointer;
     width: 250px;
     margin: 0 auto;
     border: none;
     padding: 0.8rem 1rem;
-    border-radius: var(--border-radius);
-    background-color: var(--blue-light);
-    font-family: var(--font-family);
     font-size: 1.2rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
     transition: var(--transition);
+    background-color: var(--blue-light);
 }
 
-.add-skill-btn:hover {
+.btn:hover {
     background-color: var(--blue-dark);
     color: var(--gray-lighter);
+}
+
+.previous-projects {
+    display: flex;
+    justify-content: center;
 }
 
 .education-section {
@@ -566,6 +571,10 @@ li {
     transform: scale(1.02);
 }
 
+.single-project .fa-solid {
+    color: var(--pink-light);
+}
+
 .project-info {
     display: flex;
     flex-direction: column;
@@ -609,6 +618,11 @@ li {
     color: var(--blue-light);
 }
 
+.tag-previous {
+    background-color: var(--pink-dark);
+    color: var(--pink-medium);
+}
+
 .project-icon-container {
     display: flex;
     align-items: center;
@@ -619,8 +633,7 @@ li {
     margin: 1rem 0 0.5rem;
 }
 
-.fa-hotel,
-.fa-camera-retro {
+.project-icon-container .fa-solid {
     font-size: 4.5rem;
 }
 
@@ -636,8 +649,12 @@ li {
     background-color: var(--blue-dark);
 }
 
-.fa-camera-retro {
+.icon-snapgram .fa-camera-retro {
     color: var(--blue-light);
+}
+
+.icon-previous {
+    background-color: var(--purple-light);
 }
 
 .project-link {
